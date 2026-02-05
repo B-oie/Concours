@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './VotingPanel.css';
 
+const apiUrl = (process.env.REACT_APP_API_URL || 'http://localhost:3001').replace(/\/+$/, '');
+
 // --- Fonctions d'aide à l'affichage (déplacées en dehors du composant) ---
 
 const renderMedia = (filePath) => {
-  const fullUrl = `http://localhost:3001${filePath}`;
+  const fullUrl = `${apiUrl}${filePath}`;
   const extension = filePath.split('.').pop().toLowerCase();
   
   if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension)) {
@@ -53,7 +55,7 @@ const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId }) => 
     const votingPlayerId = currentPlayerId;
 
     try {
-      const response = await fetch(`http://localhost:3001/api/votes/${challengeId}/vote`, {
+      const response = await fetch(`${apiUrl}/api/votes/${challengeId}/vote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ playerId: votingPlayerId, decision }),
