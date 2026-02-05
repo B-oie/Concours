@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './EventLog.css';
 
+const apiUrl = (process.env.REACT_APP_API_URL || 'http://localhost:3001').replace(/\/+$/, '');
+
 const EventLog = () => {
     const [events, setEvents] = useState([]);
     const [error, setError] = useState(null);
@@ -8,7 +10,7 @@ const EventLog = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/events');
+                const response = await fetch(`${apiUrl}/api/events`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
