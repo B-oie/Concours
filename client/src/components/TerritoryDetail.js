@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './TerritoryDetail.css';
 
+const apiUrl = (process.env.REACT_APP_API_URL || 'http://localhost:3001').replace(/\/+$/, '');
+
 const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, currentPlayerId, gameData }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [proofText, setProofText] = useState('');
@@ -19,7 +21,7 @@ const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, current
         return;
       }
       try {
-        const response = await fetch(`http://localhost:3001/api/territories/${territory.id}/challenge-template`);
+        const response = await fetch(`${apiUrl}/api/territories/${territory.id}/challenge-template`);
         if (!response.ok) {
           const errData = await response.json();
           throw new Error(errData.message || "Erreur lors de la récupération du défi.");
@@ -78,7 +80,7 @@ const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, current
 
 
     try {
-      const response = await fetch('http://localhost:3001/api/challenges', {
+      const response = await fetch(`${apiUrl}/api/challenges`, {
         method: 'POST',
         body: formData,
       });
