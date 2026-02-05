@@ -1,0 +1,926 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "François",
+      "score": 0,
+      "color": "#d9534f"
+    },
+    {
+      "id": 2,
+      "name": "Gabin",
+      "score": 0,
+      "color": "#5bc0de"
+    },
+    {
+      "id": 3,
+      "name": "Guillaume",
+      "score": 0,
+      "color": "#5cb85c"
+    },
+    {
+      "id": 4,
+      "name": "Jack",
+      "score": 0,
+      "color": "#ffc107"
+    },
+    {
+      "id": 5,
+      "name": "Mathieu",
+      "score": 0,
+      "color": "#6f42c1"
+    }
+  ],
+  "territories": [
+    {
+      "id": "C1",
+      "name": "Territoire C1",
+      "region": "Cœur",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C2",
+        "O1",
+        "E1"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "C2",
+      "name": "Territoire C2",
+      "region": "Cœur",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C2",
+        "O2",
+        "E2"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "O1",
+      "name": "Territoire O1",
+      "region": "Ouest",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C1",
+        "O2",
+        "O3"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "O2",
+      "name": "Territoire O2",
+      "region": "Ouest",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C2",
+        "O1",
+        "O4"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "O3",
+      "name": "Territoire O3",
+      "region": "Ouest",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "O1",
+        "O4"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "O4",
+      "name": "Territoire O4",
+      "region": "Ouest",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "O2",
+        "O3"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "E1",
+      "name": "Territoire E1",
+      "region": "Est",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C1",
+        "E2",
+        "E3"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "E2",
+      "name": "Territoire E2",
+      "region": "Est",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "C2",
+        "E1",
+        "E4"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "E3",
+      "name": "Territoire E3",
+      "region": "Est",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "E1",
+        "E4"
+      ],
+      "activeChallengeId": null
+    },
+    {
+      "id": "E4",
+      "name": "Territoire E4",
+      "region": "Est",
+      "ownerId": null,
+      "level": 0,
+      "connections": [
+        "E2",
+        "E3"
+      ],
+      "activeChallengeId": null
+    }
+  ],
+  "challenges": [
+    {
+      "id": 1,
+      "titre": "Premier arrivé, premier servi",
+      "description": "Le premier joueur à réclamer ce défi gagne un territoire.",
+      "type_preuve": "aucune",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 2,
+      "titre": "Dire bonjour à quelqu'un",
+      "description": "Fournir une preuve vidéo que vous avez dit bonjour à un inconnu.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 3,
+      "titre": "Le plein de vitamines",
+      "description": "Manger 5 fruits ou légumes différents en une seule journée et le prouver.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 4,
+      "titre": "Boire le verre de quelqu'un d'autre",
+      "description": "Boire le verre d'une personne sans qu'elle ne s'en rende compte.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 5,
+      "titre": "Créer un cocktail bon et validé",
+      "description": "Créer un cocktail original et obtenir la validation d'au moins deux autres joueurs.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 6,
+      "titre": "Offrir des fleurs à sa maman",
+      "description": "Offrir un bouquet de fleurs à votre maman et prouver sa réaction.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 7,
+      "titre": "Démarrer une voiture en 4ième",
+      "description": "Démarrer une voiture manuelle directement en 4ème vitesse.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 8,
+      "titre": "Boire un ricard à midi moins le quart",
+      "description": "Boire un verre de Ricard à 11h45 précises.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 9,
+      "titre": "Faire une photo d'un autre joueur",
+      "description": "Prendre en photo un autre joueur à son insu.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 56,
+      "titre": "L'architecte de cartes",
+      "description": "Construire un château de cartes d'au moins 3 étages.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 10,
+      "titre": "Demander le num d'une Camille",
+      "description": "Demander le numéro de téléphone à une personne prénommée Camille.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 11,
+      "titre": "Selfie avec un chauve",
+      "description": "Faire un selfie avec une personne chauve.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 12,
+      "titre": "Shot TGV",
+      "description": "Boire un shot TGV (Tequila, Gin, Vodka).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 13,
+      "titre": "Faire les lacets d'une personne de plus de 60 ans",
+      "description": "Faire les lacets d'une personne âgée de plus de 60 ans.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 14,
+      "titre": "Boire deux pintes en moins de 10min",
+      "description": "Boire deux pintes de bière en moins de 10 minutes.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 15,
+      "titre": "Selfie avec un mec cosplayer",
+      "description": "Faire un selfie avec une personne déguisée en cosplayer.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 16,
+      "titre": "Prendre une salade à McDo",
+      "description": "Commander et manger une salade au McDonald's.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 17,
+      "titre": "Caresser un chien",
+      "description": "Caresser un chien inconnu dans la rue.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 18,
+      "titre": "Courir 5Km",
+      "description": "Courir une distance de 5 kilomètres.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 19,
+      "titre": "Aller dans un bar secret",
+      "description": "Trouver et aller dans un bar secret (speakeasy).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 20,
+      "titre": "Vendre un fluo rose",
+      "description": "Vendre un surligneur rose à un inconnu.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 21,
+      "titre": "Faire un pâté en croûte",
+      "description": "Réaliser un pâté en croûte maison.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 22,
+      "titre": "Diabolo sur la place",
+      "description": "Faire du diabolo sur la place de la mairie.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 23,
+      "titre": "Collectionneur de cônes",
+      "description": "Prendre un cône de chantier.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 24,
+      "titre": "Performance vocale",
+      "description": "Péter dans un micro.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 25,
+      "titre": "L'incruste",
+      "description": "Aller dans un cours qui n'est pas le tien.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 26,
+      "titre": "La grande bouteille",
+      "description": "Trouver une bouteille de plus d'un mètre de haut.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 27,
+      "titre": "Tournée générale",
+      "description": "Se faire offrir une bière par un inconnu.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 28,
+      "titre": "Le voyageur",
+      "description": "Changer de pays.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 29,
+      "titre": "Splash",
+      "description": "Faire une bombe à la piscine.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 30,
+      "titre": "Le coiffeur",
+      "description": "Couper les cheveux de quelqu'un.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 31,
+      "titre": "Paparazzi",
+      "description": "Prendre en photo un autre joueur qui dort.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 32,
+      "titre": "La bise",
+      "description": "Faire la bise à un noir.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 33,
+      "titre": "Quête de la carotte",
+      "description": "Sonner chez quelqu'un pour demander une carotte (validé seulement si tu récupères la carotte).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 34,
+      "titre": "Épilation",
+      "description": "Mettre une bande de cire sur une jambe.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 35,
+      "titre": "Bon samaritain",
+      "description": "Faire un don du sang.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 36,
+      "titre": "Le chef",
+      "description": "Faire de la compote pour un pote.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 37,
+      "titre": "L'écrivain",
+      "description": "Écrire 10 pages d'un texte logique sans la lettre 'c' (police Nex time roman, taille 12).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 38,
+      "titre": "Le déguisé",
+      "description": "Aller déguisé à une soirée non déguisée (avec des gens que tu ne connais pas).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 39,
+      "titre": "Invité de mariage",
+      "description": "Aller à un mariage.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 40,
+      "titre": "Nouveau style",
+      "description": "Se teindre les cheveux (vraie teinture, pas temporaire).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 41,
+      "titre": "Vainqueur à B-oie",
+      "description": "Gagner une partie de jeu de B-oie.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 42,
+      "titre": "Dégustation de crabe",
+      "description": "Manger un crabe cru.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 43,
+      "titre": "Skater",
+      "description": "Réussir un kick-flip en skate.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 44,
+      "titre": "Déconnexion",
+      "description": "Passer une semaine sans téléphone.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 45,
+      "titre": "Les homonymes",
+      "description": "Trouver un couple qui a le même prénom.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 46,
+      "titre": "Le jardinier",
+      "description": "Détérrer un tournesol.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 47,
+      "titre": "L'âne mouillé",
+      "description": "Pisser sur un âne.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 48,
+      "titre": "La tête dans les nuages",
+      "description": "Aller dans les nuages (brouillard non autorisé).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 49,
+      "titre": "Le sculpteur",
+      "description": "Faire une sculpture.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 50,
+      "titre": "Le breuvage",
+      "description": "Faire boire ta pisse à un autre joueur.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 51,
+      "titre": "Le cavalier",
+      "description": "Monter à cheval.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 52,
+      "titre": "Le gymnaste",
+      "description": "Faire un vrai salto.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 53,
+      "titre": "Le supporter",
+      "description": "Porter un maillot de l'OM à Paris ou inversement.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 54,
+      "titre": "La main baladeuse",
+      "description": "Ploter les seins d'une Margot.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 55,
+      "titre": "L'insomniaque",
+      "description": "Faire deux nuits blanches de suite.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 57,
+      "titre": "Incruste photo",
+      "description": "S'incruster dans une photo de groupe (et récupérer la photo)",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 58,
+      "titre": "Pierre Feuille Ciseaux de rue",
+      "description": "Gagner un pierre feuille ciseaux contre un mec que tu ne connais pas dans la rue",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 59,
+      "titre": "Selfie fermier",
+      "description": "Selfie avec un animal de la ferme vache, âne, cochon etc... Pas le droit au chat ni chien évidemment",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 60,
+      "titre": "L'Équilibriste",
+      "description": "Tenir une cuillère en équilibre sur son nez pendant 1 minute chrono.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 61,
+      "titre": "SMS d'amour",
+      "description": "Envoyer un SMS \"Je t'aime encore\" à un numéro de téléphone au hasard (sans explication et continuer la discussion si possible)",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 62,
+      "titre": "Le Client Indécis",
+      "description": "Demander la composition détaillée de 3 burgers différents au McDo sans en commander aucun à la fin au drive par exemple.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 63,
+      "titre": "Autographe de l'inconnu",
+      "description": "Demander un autographe à un mec random",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 64,
+      "titre": "L'ATR",
+      "description": "Réussir à tenir en équilibre sur les mains (ATR) pendant 5 secondes filmées.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 65,
+      "titre": "Le Sommelier",
+      "description": "Identifier à l'aveugle 5 marques de bières",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 66,
+      "titre": "Le Polyglotte",
+      "description": "Apprendre à compter jusqu'à 10 dans une langue dont tu ne connais pas un mot (ex: Hongrois, Japonais, Arabe), et le réciter sans faute.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 67,
+      "titre": "L'habitué",
+      "description": "Aller dans un bar où un restaurant où tu n’es jamais allé et demandé comme d'habitude",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 68,
+      "titre": "Le jumeau astral",
+      "description": "Trouver quelqu’un né le même jour que toi (jour/mois)",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 69,
+      "titre": "Le Journaliste",
+      "description": "Tenir un journal écrit pendant 7 jours (une page par jour)",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 70,
+      "titre": "L'Hôte",
+      "description": "Invité tout les autres joueurs à manger chez toi et leur faire à manger",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 71,
+      "titre": "Le Jardinier",
+      "description": "Planter un arbre",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 72,
+      "titre": "Le Pétitionnaire Absurde",
+      "description": "Faire signer une pétition totalement absurde (ex: \"Obligation que les frites soient toujours à volonté\") à au moins 15 personnes.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 73,
+      "titre": "Le Moine",
+      "description": "Passer 24h sans prononcer un seul mot (tout par écrit ou gestes).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 74,
+      "titre": "L'Invité Surprise",
+      "description": "Réussir à se faire inviter à dîner chez des gens que tu ne connais absolument pas.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 75,
+      "titre": "L'Homme-Statue",
+      "description": "Rester totalement immobile sur une place publique pendant 15 minutes, sans rire ni parler, peu importe ce qu'il se passe autour.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 76,
+      "titre": "Le Grand Saut",
+      "description": "Faire un baptême de l'air (Saut à l'élastique ou Parachutisme).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 77,
+      "titre": "Le Calculateur",
+      "description": "Apprendre et réciter les 100 premières décimales de Pi (3,1415...) sans erreur et de mémoire",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 78,
+      "titre": "Le Sans Sourcil",
+      "description": "Se raser un sourcil",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 79,
+      "titre": "Le Pèlerin",
+      "description": "Aller à Poil (58)",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 80,
+      "titre": "Le Client Exigeant",
+      "description": "Demander un verre d'eau \"avec des glaçons qui ne soient pas trop froids\" dans un bar.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 1,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 81,
+      "titre": "Chapeau en Aluminium",
+      "description": "Porter un chapeau fait maison en papier d'aluminium dans un lieu public (ex: supermarché) pendant au moins 20 minutes.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 82,
+      "titre": "Le Bain de Minuit",
+      "description": "Se baigner dans la mer ou un lac à minuit pile (sécurité d'abord !).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 3,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 83,
+      "titre": "Le Marathon de Films",
+      "description": "Regarder les 3 films de la trilogie du Seigneur des Anneaux (versions longues) d'une seule traite, sans s'endormir.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 84,
+      "titre": "Le Stand-Up",
+      "description": "S'inscrire et monter sur scène lors d'une soirée micro-ouvert (open-mic) pour raconter une blague ou une courte histoire.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    }
+  ],
+  "votes": [],
+  "events": [],
+  "game": {
+    "startDate": "2025-03-01T00:00:00Z",
+    "endDate": "2025-12-31T23:59:59Z"
+  }
+}

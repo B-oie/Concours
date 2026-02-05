@@ -1,0 +1,163 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--secondary-bg-color, #f5f0e8);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  border-top: 5px solid var(--accent-color, #cba880);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slide-down 0.3s ease-out;
+  color: var(--text-color, #333333);
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--text-color, #333333);
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--header-bg-color, #4a4a4a);
+  border-left: 5px solid;
+  padding-left: 15px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.details-grid p {
+  margin: 0;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.challenge-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.action-button {
+  background-color: var(--header-bg-color, #4a4a4a);
+  color: var(--header-text-color, #E9DBC1);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #606060;
+}
+
+/* Styles for the challenge submission form */
+.challenge-form h3 {
+  color: var(--header-bg-color, #4a4a4a);
+  text-align: center;
+  margin-top: 0;
+}
+
+.challenge-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: var(--text-color, #333333);
+  font-family: inherit;
+  font-size: 1em;
+  margin: 15px 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-actions .action-button,
+.form-actions .cancel-button {
+  width: 100%;
+  margin-top: 0;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #bbb;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid #e74c3c;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.locked-message {
+  color: #d35400;
+  text-align: center;
+  font-style: italic;
+}
+
+.action-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
