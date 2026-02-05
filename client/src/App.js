@@ -7,7 +7,7 @@ import PlayerList from './components/PlayerList';
 import EventLog from './components/EventLog';
 import PlayerSelection from './components/PlayerSelection';
 
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+const apiUrl = (process.env.REACT_APP_API_URL || 'http://localhost:3001').replace(/\/+$/, '');
 
 function App() {
   const [gameData, setGameData] = useState(null);
