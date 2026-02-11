@@ -51,6 +51,7 @@ function App() {
     return gameData.players.find(p => p.id === territory.ownerId);
   };
 
+  const isSpectator = currentPlayer && currentPlayer.id === 'spectator';
   const pendingChallengesCount = gameData?.challenges.filter(c => c.status === 'pending').length || 0;
 
   // Render PlayerSelection if no player is chosen yet or if data is not loaded
@@ -80,6 +81,7 @@ function App() {
               territories={gameData.territories} 
               players={gameData.players}
               onTerritorySelect={handleTerritorySelect}
+              isSpectator={isSpectator}
             />
             <EventLog />
           </div>
@@ -88,12 +90,14 @@ function App() {
         )}
       </main>
 
-      <button className="voting-panel-toggle" onClick={() => setVotingPanelOpen(true)}>
-        <span className="toggle-icon">⚖️</span>
-        {pendingChallengesCount > 0 && (
-          <span className="notification-badge">{pendingChallengesCount}</span>
-        )}
-      </button>
+      {!isSpectator && (
+        <button className="voting-panel-toggle" onClick={() => setVotingPanelOpen(true)}>
+          <span className="toggle-icon">⚖️</span>
+          {pendingChallengesCount > 0 && (
+            <span className="notification-badge">{pendingChallengesCount}</span>
+          )}
+        </button>
+      )}
 
       <VotingPanel 
         gameData={gameData} 
@@ -101,6 +105,7 @@ function App() {
         isOpen={isVotingPanelOpen}
         onClose={() => setVotingPanelOpen(false)}
         currentPlayerId={currentPlayer.id}
+        isSpectator={isSpectator}
       />
 
       {selectedTerritory && (
@@ -111,6 +116,7 @@ function App() {
           onChallengeSubmit={fetchGameData}
           currentPlayerId={currentPlayer.id}
           gameData={gameData}
+          isSpectator={isSpectator}
         />
       )}
     </div>

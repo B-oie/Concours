@@ -44,7 +44,7 @@ const renderProof = (proof) => {
 
 // --- Composant Principal ---
 
-const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId }) => {
+const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId, isSpectator }) => {
   const [errors, setErrors] = useState({});
 
   if (!gameData || !gameData.challenges || !gameData.votes) {
@@ -52,6 +52,10 @@ const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId }) => 
   }
 
   const handleVote = async (challengeId, decision) => {
+    if (isSpectator) {
+      // Spectators cannot vote
+      return;
+    }
     const votingPlayerId = currentPlayerId;
 
     try {
@@ -88,6 +92,7 @@ const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId }) => 
       <div className={`voting-panel ${isOpen ? 'open' : ''}`}>
         <button className="voting-panel-close-button" onClick={onClose}>&times;</button>
         <h2 className="panel-title">Votes en Cours</h2>
+        {isSpectator && <p className="spectator-message">Vous êtes en mode spectateur. Vous ne pouvez pas voter.</p>}
         <div className="vote-list">
           {pendingChallenges.length > 0 ? (
             pendingChallenges.map(challenge => {
@@ -115,14 +120,14 @@ const VotingPanel = ({ gameData, onVote, isOpen, onClose, currentPlayerId }) => 
                     <button 
                       className="vote-button for" 
                       onClick={() => handleVote(challenge.id, 'for')}
-                      disabled={hasVoted || isSubmitter}
+                      disabled={hasVoted || isSubmitter || isSpectator}
                     >
                       Pour ({vote.votesFor})
                     </button>
                     <button 
                       className="vote-button against" 
                       onClick={() => handleVote(challenge.id, 'against')}
-                      disabled={hasVoted || isSubmitter}
+                      disabled={hasVoted || isSubmitter || isSpectator}
                     >
                       Contre ({vote.votesAgainst})
                     </button>

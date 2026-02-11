@@ -1,0 +1,76 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--secondary-bg-color, #f5f0e8); /* Lighter beige */
+  color: var(--text-color, #333333); /* Dark gray text */
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-top: 5px solid var(--accent-color, #cba880); /* Accent color border */
+}
+
+.modal-content h2 {
+  color: var(--header-bg-color, #4a4a4a); /* Dark gray for headings */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.modal-content h3 {
+  color: var(--accent-color, #cba880); /* Accent color for subheadings */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.modal-content p, .modal-content ul {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.modal-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.modal-content li {
+  margin-bottom: 5px;
+}
+
+.close-button {
+  background: var(--header-bg-color, #4a4a4a); /* Dark gray */
+  color: var(--header-text-color, #E9DBC1); /* Beige text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: var(--accent-color, #cba880); /* Accent color on hover */
+  color: #ffffff; /* White text on hover for contrast */
+}

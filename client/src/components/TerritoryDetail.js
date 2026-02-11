@@ -3,7 +3,7 @@ import './TerritoryDetail.css';
 
 const apiUrl = (process.env.REACT_APP_API_URL || 'http://localhost:3001').replace(/\/+$/, '');
 
-const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, currentPlayerId, gameData }) => {
+const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, currentPlayerId, gameData, isSpectator }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [proofText, setProofText] = useState('');
   const [proofFile, setProofFile] = useState(null);
@@ -44,6 +44,11 @@ const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, current
   const handleChallengeSubmit = async (e) => {
     e.preventDefault();
     setError('');
+
+    if (isSpectator) {
+      setError("Les spectateurs ne peuvent pas soumettre de défis.");
+      return;
+    }
 
     const challengeToSubmit = fetchedChallengeTemplate;
 
@@ -109,34 +114,40 @@ const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, current
           <p>Pour le territoire : <strong>{territory.name}</strong></p>
           {error && <p className="error-message">{error}</p>}
           
-          {fetchedChallengeTemplate?.type_preuve !== 'aucune' && (
+          {isSpectator ? (
+            <p className="spectator-message">Vous êtes en mode spectateur. Vous ne pouvez pas soumettre de preuves.</p>
+          ) : (
             <>
-              <label htmlFor="proof-text">Description (contexte, explication) :</label>
-              <textarea
-                id="proof-text"
-                value={proofText}
-                onChange={(e) => setProofText(e.target.value)}
-                placeholder="Décrivez votre preuve, collez un lien..."
-                rows="3"
-              />
-              
-              <label htmlFor="proof-file">Fichier de preuve (image/vidéo) :</label>
-              <input
-                id="proof-file"
-                type="file"
-                accept="image/*,video/*"
-                onChange={(e) => setProofFile(e.target.files[0])}
-              />
+              {fetchedChallengeTemplate?.type_preuve !== 'aucune' && (
+                <>
+                  <label htmlFor="proof-text">Description (contexte, explication) :</label>
+                  <textarea
+                    id="proof-text"
+                    value={proofText}
+                    onChange={(e) => setProofText(e.target.value)}
+                    placeholder="Décrivez votre preuve, collez un lien..."
+                    rows="3"
+                  />
+                  
+                  <label htmlFor="proof-file">Fichier de preuve (image/vidéo) :</label>
+                  <input
+                    id="proof-file"
+                    type="file"
+                    accept="image/*,video/*"
+                    onChange={(e) => setProofFile(e.target.files[0])}
+                  />
+                </>
+              )}
+              {fetchedChallengeTemplate?.type_preuve === 'aucune' && (
+                <p>Ce défi ne nécessite pas de preuve. Cliquez sur "Envoyer" pour le réclamer.</p>
+              )}
+
+              <div className="form-actions">
+                <button type="button" onClick={() => setIsSubmitting(false)} className="cancel-button">Annuler</button>
+                <button type="submit" className="action-button" disabled={isSpectator}>Envoyer</button>
+              </div>
             </>
           )}
-          {fetchedChallengeTemplate?.type_preuve === 'aucune' && (
-            <p>Ce défi ne nécessite pas de preuve. Cliquez sur "Envoyer" pour le réclamer.</p>
-          )}
-
-          <div className="form-actions">
-            <button type="button" onClick={() => setIsSubmitting(false)} className="cancel-button">Annuler</button>
-            <button type="submit" className="action-button">Envoyer</button>
-          </div>
         </form>
       );
     }
@@ -163,13 +174,17 @@ const TerritoryDetail = ({ territory, owner, onClose, onChallengeSubmit, current
               <>
                 <p><strong>Défi :</strong> {fetchedChallengeTemplate.titre} (Niveau {fetchedChallengeTemplate.niveau})</p>
                 <p>{fetchedChallengeTemplate.description}</p>
-                <button 
-                  className="action-button" 
-                  onClick={() => setIsSubmitting(true)}
-                  disabled={isLocked}
-                >
-                  Tenter le défi
-                </button>
+                {isSpectator ? (
+                  <p className="spectator-message">Vous êtes en mode spectateur. Vous ne pouvez pas tenter de défis.</p>
+                ) : (
+                  <button 
+                    className="action-button" 
+                    onClick={() => setIsSubmitting(true)}
+                    disabled={isLocked || isSpectator}
+                  >
+                    Tenter le défi
+                  </button>
+                )}
               </>
             ) : (
               <p>Aucun défi disponible pour ce territoire actuellement.</p>

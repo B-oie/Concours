@@ -185,7 +185,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": null
+      "assignedToTerritoryId": "E1"
     },
     {
       "id": 4,
@@ -221,7 +221,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": null
+      "assignedToTerritoryId": "C1"
     },
     {
       "id": 8,
@@ -680,7 +680,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": null
+      "assignedToTerritoryId": "E2"
     },
     {
       "id": 59,

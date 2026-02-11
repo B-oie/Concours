@@ -21,7 +21,7 @@
   position: relative;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   animation: slide-down 0.3s ease-out;
-  color: var(--text-color, #333333);
+  color: var(--text-color, #333333); /* Default text color for the modal content */
 }
 
 @keyframes slide-down {
@@ -67,6 +67,7 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  color: #333333; /* Explicitly set a dark color for readability */
 }
 
 .challenge-section {
@@ -160,4 +161,14 @@
 .action-button:disabled {
   background-color: #999;
   cursor: not-allowed;
+}
+
+.spectator-message {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
