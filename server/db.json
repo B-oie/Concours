@@ -185,7 +185,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": "E1"
+      "assignedToTerritoryId": null
     },
     {
       "id": 4,
@@ -221,7 +221,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": "C1"
+      "assignedToTerritoryId": null
     },
     {
       "id": 8,
@@ -680,7 +680,7 @@
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 1,
-      "assignedToTerritoryId": "E2"
+      "assignedToTerritoryId": null
     },
     {
       "id": 59,
@@ -911,6 +911,96 @@
       "id": 84,
       "titre": "Le Stand-Up",
       "description": "S'inscrire et monter sur scène lors d'une soirée micro-ouvert (open-mic) pour raconter une blague ou une courte histoire.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 85,
+      "titre": "Le Comique",
+      "description": "Faire une blague qui fait rire la majorité des joueurs.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 86,
+      "titre": "Le Musclé",
+      "description": "Réaliser 26 pompes en une seule série.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 87,
+      "titre": "Le Grimpeur",
+      "description": "Monter 10 étages d'escalier.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 88,
+      "titre": "Le Plongeur Stylé",
+      "description": "Plonger entièrement habillé dans une piscine.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 89,
+      "titre": "Le Téléphone Rouge",
+      "description": "Rester 10 minutes au téléphone en appelant un numéro au hasard et en engageant la conversation.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 90,
+      "titre": "Le Boulanger",
+      "description": "Apporter des croissants ou pains au chocolat à tous les autres joueurs.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 91,
+      "titre": "Le Philanthrope",
+      "description": "Faire un don d'au moins 5€ à une association caritative.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 92,
+      "titre": "Les Inséparables",
+      "description": "Passer 24 heures attaché ou menotté à une autre personne (joueur ou non).",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 4,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 93,
+      "titre": "Le Croqueur",
+      "description": "Manger 6 biscuits TUC en moins d'une minute.",
+      "type_preuve": "media",
+      "statut": "disponible",
+      "niveau": 2,
+      "assignedToTerritoryId": null
+    },
+    {
+      "id": 94,
+      "titre": "La pute",
+      "description": "Réaliser un strip-tease intégral.",
       "type_preuve": "media",
       "statut": "disponible",
       "niveau": 4,

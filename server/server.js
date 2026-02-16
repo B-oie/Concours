@@ -429,7 +429,7 @@ const applyHourlyPointsAndBonuses = async () => {
 };
 
 // Main scheduled task runner
-cron.schedule('* * * * *', async () => { // Runs every minute
+cron.schedule('0 * * * *', async () => { // Runs every minute
     console.log('Exécution des tâches planifiées...');
     try {
         await processExpiredVotes();
